@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Project
 
 ## Getting Started
 
-First, run the development server:
+Follow the steps below to set up and run the development server for this Next.js project.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Prerequisites
+
+Ensure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org/) (LTS version recommended)
+- [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/)
+
+### Installation
+
+1. Install dependencies:
+   ```shSSSSS
+   yarn install
+   # or
+   npm install
+   ```
+
+### Environment Variables
+
+Before running the project, create a `.env` file in the root directory and add the following keys:
+
+```env
+OPENAI_API_KEY=
+ELEVEN_LABS_API_KEY=
+API_URL=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### FYI The API_URL is the url to the fast api
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Replace the values with your actual API keys and URLs.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Running the Development Server
 
-## Learn More
+Start the development server with:
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+yarn dev
+# or
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application will be available at [http://localhost:3000](http://localhost:3000) by default.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Additional Notes
 
-## Deploy on Vercel
+- Make sure your `.env` file is not committed to version control by adding it to `.gitignore`.
+- Refer to the Next.js [documentation](https://nextjs.org/docs) for further details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Happy coding! 🚀
