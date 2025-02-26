@@ -179,7 +179,6 @@ export default function ImageGenerationPage() {
           >
             <Option value={5}>5</Option>
             <Option value={10}>10</Option>
-            <Option value={15}>15</Option>
           </Select>
         </Form.Item>
         <Form.Item>
