@@ -18,10 +18,6 @@ export async function generateScripts(
     });
 
     return response.choices.map((choice) => choice.text.trim().split(":")[1]);
-    // return response.choices.map((choice) => {
-    //   const current = choice.text.trim().split(":")[1];
-    //   return current;
-    // });
   } catch (error) {
     console.error("Error generating scripts from OpenAI:", error);
     return [];

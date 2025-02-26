@@ -52,9 +52,6 @@ export default function ImageGenerationPage() {
   const [previewCurrent, setPreviewCurrent] = useState(0);
 
   useEffect(() => {
-    console.log("=========== in image generation =============");
-    console.log(selectedVoice);
-    console.log(selectedScript);
     setCurrentStep(2);
   }, [setCurrentStep]);
 
@@ -71,16 +68,12 @@ export default function ImageGenerationPage() {
   };
 
   const handleGenerateStyles = async () => {
-    // Validate custom prompt field
     if (!customPrompt.trim()) {
       setPromptError("Please fill in the custom prompt input field.");
       return;
     } else {
       setPromptError("");
     }
-
-    console.log("Starting image generation...");
-    console.log("Uploaded file:", uploadedFile);
 
     if (!uploadedFile) {
       message.error("Please upload an image first.");
@@ -94,7 +87,6 @@ export default function ImageGenerationPage() {
       formData.append("prompt", customPrompt);
       formData.append("styleCount", styleCount.toString());
       const images = await generateStyledImages(formData);
-      console.log("Received images:", images);
       setGeneratedImages(images);
     } catch (error) {
       console.error("Error generating styled images:", error);

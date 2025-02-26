@@ -36,16 +36,11 @@ export async function generateStyledImages(formData: FormData): Promise<any[]> {
     fs.writeFileSync(tempPath, convertedImage);
     fs.writeFileSync(tempMaskPath, maskImage);
 
-    console.log(formData.get("prompt"));
     const basePrompt = formData.get("prompt") as string;
-    // const enhancedPrompt = `${basePrompt}. Ensure that the image is part of a sequential series intended for video frames, with subtle, continuous changes that allow for smooth transitions between frames.`;
-    // const enhancedPrompt = `${basePrompt}. High-resolution, detailed textures, photorealistic, intricate details, ultra-HD, cinematic lighting, professional photography, highly detailed edges.`;
-    // const enhancedPrompt = `${basePrompt}. High-resolution, detailed textures, photorealistic, intricate details, ultra-HD, cinematic lighting, professional photography, highly detailed edges.`;
     const enhancedPrompt = `${basePrompt}. 
 Ultra-HD, 4K resolution, highly detailed textures, sharp focus, cinematic lighting, 
 photo-realistic quality, professional studio lighting, intricate details, smooth transitions.`;
 
-    // Send the image to OpenAI
     const response = await openai.images.edit({
       // model: "dall-e-3",
       image: fs.createReadStream(tempPath),
@@ -53,7 +48,6 @@ photo-realistic quality, professional studio lighting, intricate details, smooth
       prompt: enhancedPrompt,
       n: parseInt(formData.get("styleCount") as string) || 1,
       size: "1024x1024",
-      // style: "vivid", // Options: "vivid", "natural"
     });
 
     fs.unlinkSync(tempPath);
