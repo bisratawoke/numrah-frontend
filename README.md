@@ -1,5 +1,3 @@
-# Next.js Project
-
 ## Getting Started
 
 Follow the steps below to set up and run the development server for this Next.js project.
@@ -30,7 +28,9 @@ ELEVEN_LABS_API_KEY=
 API_URL=
 ```
 
-#### FYI The API_URL is the url to the fast api
+#### FYI
+
+The API_URL is the URL to the FastAPI project: https://github.com/bisratawoke/numrah-backend
 
 Replace the values with your actual API keys and URLs.
 
